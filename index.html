@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WASM Video Editor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 WASM Video Editor</h1>
+
+    <input type="file" id="video-upload" accept="video/*" />
+    <video id="video-preview" controls></video>
+
+    <div id="text-controls">
+      <textarea id="text-input" placeholder="Enter your text here..."></textarea>
+      <div class="flex-row">
+        <label>Font Size <input type="number" id="font-size" value="32" min="8" max="200" /></label>
+        <label>Rotation (°) <input type="number" id="rotation" value="0" min="0" max="360" /></label>
+        <label>Align
+          <select id="align">
+            <option>left</option>
+            <option>center</option>
+            <option>right</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div id="text-box" contenteditable="true"></div>
+
+    <div id="multi-text-output"></div>
+
+    <button id="generate">Export</button>
+    <div id="status"></div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
